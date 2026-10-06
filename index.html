@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a1020">
+<title>Chúng ta đã cùng nhau lớn lên — EXO × EXO-L</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Courier+Prime:wght@400;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="is-locked">
+
+<!-- Nền sao + tuyết rơi (tự vẽ bằng script.js) -->
+<canvas id="sky" aria-hidden="true"></canvas>
+
+
+<!-- ============ THANH MENU ============ -->
+<header class="navbar" id="navbar">
+    <a href="#anh" class="brand">EXO <i>×</i> EXO-L</a>
+    <nav>
+        <a href="#hanh-trinh" data-spy="hanh-trinh">Journey</a>
+        <a href="#tuoi-tre" data-spy="tuoi-tre">Youth</a>
+        <a href="#phia-truoc" data-spy="phia-truoc">Today</a>
+    </nav>
+</header>
+
+<!-- ============ ĐĨA NHẠC NỔI (chỉ dùng khi loai = "mp3") ============ -->
+<button class="fab" id="fab" type="button" aria-label="Bật / tắt nhạc"><i></i><span id="fabIcon">▶</span></button>
+
+<!-- ============ 1. MÀN HÌNH MỞ ĐẦU ============ -->
+<div class="gate" id="gate">
+    <div class="orbit" aria-hidden="true">
+        <i class="halo"></i><i class="rays"></i>
+        <i class="ring r3"></i><i class="ring r2"></i>
+        <i class="ring r1"><b style="--k:0"></b><b style="--k:1"></b><b style="--k:2"></b><b style="--k:3"></b><b style="--k:4"></b><b style="--k:5"></b><b style="--k:6"></b><b style="--k:7"></b></i>
+        <i class="pulse" style="--k:0"></i><i class="pulse" style="--k:1"></i><i class="pulse" style="--k:2"></i>
+        <i class="streak"></i>
+        <i class="spk" style="--a:20deg;--d:96px;--t:0.1s"></i><i class="spk" style="--a:65deg;--d:150px;--t:1.2s"></i><i class="spk" style="--a:110deg;--d:84px;--t:2.1s"></i><i class="spk" style="--a:155deg;--d:170px;--t:0.6s"></i><i class="spk" style="--a:200deg;--d:110px;--t:1.8s"></i><i class="spk" style="--a:245deg;--d:160px;--t:2.6s"></i><i class="spk" style="--a:290deg;--d:92px;--t:0.9s"></i><i class="spk" style="--a:335deg;--d:140px;--t:1.5s"></i><i class="spk" style="--a:40deg;--d:190px;--t:2.2s"></i><i class="spk" style="--a:130deg;--d:200px;--t:0.4s"></i><i class="spk" style="--a:225deg;--d:205px;--t:1.1s"></i><i class="spk" style="--a:315deg;--d:196px;--t:2.4s"></i>
+        <img class="logo" src="images/exo-logo.png" alt="">
+    </div>
+
+    <div class="gate-text">
+        <h1 class="sr-only">EXO</h1>
+        <!-- ✎ Đổi câu mở đầu ở đây -->
+        <p class="gate-line">Chúng ta đã cùng nhau lớn lên.</p>
+        <button class="btn" id="openGate" type="button">Our Universe</button>
+        <!-- 8 ngôi sao = 8 thành viên -->
+        <ul class="members">
+            <li style="--i:0">Suho</li>
+            <li style="--i:1">Xiumin</li>
+            <li style="--i:2">Baekhyun</li>
+            <li style="--i:3">Chen</li>
+            <li style="--i:4">Chanyeol</li>
+            <li style="--i:5">D.O.</li>
+            <li style="--i:6">Kai</li>
+            <li style="--i:7">Sehun</li>
+        </ul>
+    </div>
+</div>
+
+
+<main>
+
+<!-- ============ 2. PHẦN ĐẦU: 8 ẢNH POLAROID TREO 2 DÂY ============ -->
+<!--
+  THAY ẢNH: bỏ ảnh vào thư mục images/ đặt tên anh-1.jpg … anh-8.jpg (hoặc sửa src="").
+  THAY CHỮ DƯỚI ẢNH: sửa năm trong <b> và dòng mô tả trong <figcaption>.
+-->
+<section class="hero" id="anh">
+    <i class="second-star" aria-hidden="true"></i>
+    <p class="hero-kicker" data-reveal>EXO · EXO-L · 2012 — 2026</p>
+
+    <div class="line" data-reveal>
+            <figure class="pola" style="--r:-3deg; --s:0s">
+                <span class="clip"></span>
+                <div class="photo"><span class="ph">Ảnh 1</span><img src="images/anh-1.jpg" alt="Ảnh kỷ niệm 2012"></div>
+                <figcaption><b>2012</b>Lần đầu gặp nhau</figcaption>
+            </figure>
+            <figure class="pola low" style="--r:2.5deg; --s:-2s">
+                <span class="clip"></span>
+                <div class="photo"><span class="ph">Ảnh 2</span><img src="images/anh-2.jpg" alt="Ảnh kỷ niệm 2013"></div>
+                <figcaption><b>2013</b>Bài hát nghe mãi</figcaption>
+            </figure>
+            <figure class="pola" style="--r:-2deg; --s:-1s">
+                <span class="clip"></span>
+                <div class="photo"><span class="ph">Ảnh 3</span><img src="images/anh-3.jpg" alt="Ảnh kỷ niệm 2016"></div>
+                <figcaption><b>2016</b>Đêm concert đầu tiên</figcaption>
+            </figure>
+            <figure class="pola low" style="--r:3deg; --s:-3s">
+                <span class="clip"></span>
+                <div class="photo"><span class="ph">Ảnh 4</span><img src="images/anh-4.jpg" alt="Ảnh kỷ niệm 2018"></div>
+                <figcaption><b>2018</b>Cả nhóm bên nhau</figcaption>
+            </figure>
+    </div>
+
+    <h2 class="hero-title" data-reveal>Chúng ta đã lớn<br><em>lên cùng nhau.</em></h2>
+    <p class="hero-sub" data-reveal>Năm tháng trôi qua. Ta đã đổi thay. Họ cũng vậy.<br>Và không hiểu sao, những tấm ảnh này vẫn nhớ ta từng là ai.</p>
+
+    <div class="line" data-reveal>
+            <figure class="pola low" style="--r:2.5deg; --s:-4s">
+                <span class="clip"></span>
+                <div class="photo"><span class="ph">Ảnh 5</span><img src="images/anh-5.jpg" alt="Ảnh kỷ niệm 2020"></div>
+                <figcaption><b>2020</b>Những ngày chờ đợi</figcaption>
+            </figure>
+            <figure class="pola" style="--r:-3deg; --s:-1.5s">
+                <span class="clip"></span>
+                <div class="photo"><span class="ph">Ảnh 6</span><img src="images/anh-6.jpg" alt="Ảnh kỷ niệm 2022"></div>
+                <figcaption><b>2022</b>Mỗi người một đường</figcaption>
+            </figure>
+            <figure class="pola low" style="--r:2deg; --s:-2.5s">
+                <span class="clip"></span>
+                <div class="photo"><span class="ph">Ảnh 7</span><img src="images/anh-7.jpg" alt="Ảnh kỷ niệm 2024"></div>
+                <figcaption><b>2024</b>Vẫn còn đó</figcaption>
+            </figure>
+            <figure class="pola" style="--r:-2.5deg; --s:-3.5s">
+                <span class="clip"></span>
+                <div class="photo"><span class="ph">Ảnh 8</span><img src="images/anh-8.jpg" alt="Ảnh kỷ niệm 2026"></div>
+                <figcaption><b>2026</b>Và bây giờ</figcaption>
+            </figure>
+    </div>
+</section>
+
+
+<!-- ============ 3. JOURNEY — 4 khung polaroid, rê chuột (hoặc chạm) để mở to ============ -->
+<!--
+  THAY ẢNH: images/hanh-trinh-1.jpg … hanh-trinh-4.jpg
+  THAY CHỮ: sửa năm trong <b> và nội dung trong <div class="memo-text">
+-->
+<section class="sec" id="hanh-trinh">
+    <div class="head" data-reveal>
+        <h2>The road<br><em>we've shared</em></h2>
+        <p class="sub">Rê chuột (hoặc chạm) vào từng khung ảnh để mở ra.</p>
+    </div>
+    <div class="memo-lines">
+        <div class="line" data-reveal>
+            <figure class="pola memo" style="--r:-2deg; --s:-1s" tabindex="0">
+                <span class="clip"></span>
+                <div class="photo"><span class="ph">Thay ảnh</span><img src="images/hanh-trinh-1.jpg" alt="Ảnh kỷ niệm 2012">
+                    <div class="memo-text"><p>Chúng mình gặp các anh khi còn rất trẻ. Một bài hát, một sân khấu, và mọi thứ bắt đầu.</p></div></div>
+                <figcaption><b>2012</b></figcaption>
+            </figure>
+            <figure class="pola memo" style="--r:2.5deg; --s:-3s" tabindex="0">
+                <span class="clip"></span>
+                <div class="photo"><span class="ph">Thay ảnh</span><img src="images/hanh-trinh-2.jpg" alt="Ảnh kỷ niệm 2016">
+                    <div class="memo-text"><p>Ta nhìn các anh lớn lên, đổi thay, đứng trên những sân khấu ngày một rộng hơn. Ta cũng đang lớn lên, theo cách của riêng mình.</p></div></div>
+                <figcaption><b>2016</b></figcaption>
+            </figure>
+            <figure class="pola memo" style="--r:2deg; --s:-2s" tabindex="0">
+                <span class="clip"></span>
+                <div class="photo"><span class="ph">Thay ảnh</span><img src="images/hanh-trinh-3.jpg" alt="Ảnh kỷ niệm 2020">
+                    <div class="memo-text"><p>Có những ngày vui, cũng có những lúc khó khăn, có những lần chờ đợi thật dài. Nhưng ta vẫn ở đây, vẫn nghe, vẫn nhớ.</p></div></div>
+                <figcaption><b>2020</b></figcaption>
+            </figure>
+            <figure class="pola memo" style="--r:-2.5deg; --s:-4s" tabindex="0">
+                <span class="clip"></span>
+                <div class="photo"><span class="ph">Thay ảnh</span><img src="images/hanh-trinh-4.jpg" alt="Ảnh kỷ niệm 2026">
+                    <div class="memo-text"><p>Những bài hát nghe đi nghe lại, những sân khấu đã chờ… vẫn còn nguyên ý nghĩa. Một phần tuổi trẻ của ta đã lớn lên cùng nhau.</p></div></div>
+                <figcaption><b>2026</b></figcaption>
+            </figure>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============ 4. OUR YOUTH — khung chữ nhật chia đôi: ảnh | lời nhắn ============ -->
+<!-- THAY VIDEO: đặt file videos/tuoi-tre.mp4 (nên dùng mp4 H.264, dưới ~20MB). Video tự phát khi lướt tới, tự dừng khi rời đi. -->
+<section class="sec youth" id="tuoi-tre">
+    <div class="head" data-reveal>
+        <h2 class="mega">Our <em>Youth</em></h2>
+    </div>
+    <div class="notebook" data-reveal>
+        <!-- Trang trái: video (đặt videos/tuoi-tre.mp4) -->
+        <div class="nb-page nb-left">
+            <figure class="nb-frame">
+                <span class="tape t1"></span><span class="tape t2"></span>
+                <div class="photo"><span class="ph">Thay video</span><video id="youthVideo" src="videos/tuoi-tre.mp4" muted loop playsinline preload="metadata"></video><button class="vsound" id="vSound" type="button" aria-label="Bật hoặc tắt tiếng video">Bật tiếng</button></div>
+                <figcaption>2012 — 2026</figcaption>
+            </figure>
+        </div>
+
+        <div class="spiral" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <!-- Trang phải: lời nhắn (căn đều hai bên, có kẻ dòng như vở) -->
+        <div class="nb-page nb-right">
+            <p class="y-k">We had a youth together.</p>
+            <p>Có thể khi ấy ta chưa biết, nhưng những năm tháng đó chính là tuổi trẻ của mình.</p>
+            <p>Ta có những bài hát để chờ, những sân khấu để mong, những cái tên khiến ngày trôi qua nhẹ nhàng hơn một chút.</p>
+            <p>Có một Neverland nhỏ trong lòng, nơi tuổi trẻ vẫn chưa chịu rời đi.</p>
+            <p>Nhiều năm nữa, có thể ta chẳng nhớ hết từng chi tiết. Nhưng ta vẫn sẽ nhớ cảm giác được trẻ, được yêu một điều gì đó bằng cả trái tim, và có những người mà âm nhạc của họ đã trở thành một phần cuộc sống.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============ 5. ONWARD — 8 con đường, một bầu trời ============ -->
+<section class="sec today" id="phia-truoc">
+    <div class="head" data-reveal>
+        <h2 class="mega"><em>Onward</em></h2>
+    </div>
+
+    <figure class="paths" id="paths">
+        <svg viewBox="0 0 360 290" role="img" aria-label="Tám con đường hướng về cùng một ngôi sao">
+            <defs>
+                <linearGradient id="pg" gradientUnits="userSpaceOnUse" x1="0" y1="268" x2="0" y2="40">
+                    <stop offset="0" stop-color="#8fb0e0" stop-opacity=".1"/><stop offset="1" stop-color="#fff"/>
+                </linearGradient>
+            </defs>
+            <polygon class="north" points="180,0 185,17 202,22 185,27 180,44 175,27 158,22 175,17"/>
+            <g fill="none" stroke="url(#pg)" stroke-width="1.1" stroke-linecap="round"><path class="pth" pathLength="1" style="--i:0" d="M180 268 C 180 200, 24 194, 24 124"/><circle class="end" style="--i:0" cx="24" cy="124" r="2.6"/><path class="pth" pathLength="1" style="--i:1" d="M180 268 C 180 192, 66 158, 66 88"/><circle class="end" style="--i:1" cx="66" cy="88" r="2.6"/><path class="pth" pathLength="1" style="--i:2" d="M180 268 C 180 184, 108 132, 108 62"/><circle class="end" style="--i:2" cx="108" cy="62" r="2.6"/><path class="pth" pathLength="1" style="--i:3" d="M180 268 C 180 176, 150 116, 150 46"/><circle class="end" style="--i:3" cx="150" cy="46" r="2.6"/><path class="pth" pathLength="1" style="--i:4" d="M180 268 C 180 200, 210 116, 210 46"/><circle class="end" style="--i:4" cx="210" cy="46" r="2.6"/><path class="pth" pathLength="1" style="--i:5" d="M180 268 C 180 192, 252 132, 252 62"/><circle class="end" style="--i:5" cx="252" cy="62" r="2.6"/><path class="pth" pathLength="1" style="--i:6" d="M180 268 C 180 184, 294 158, 294 88"/><circle class="end" style="--i:6" cx="294" cy="88" r="2.6"/><path class="pth" pathLength="1" style="--i:7" d="M180 268 C 180 176, 336 194, 336 124"/><circle class="end" style="--i:7" cx="336" cy="124" r="2.6"/></g>
+            <circle cx="180" cy="268" r="3" fill="#dfe6f0"/>
+        </svg>
+        <figcaption>Mỗi người một hướng - vẫn cùng một bầu trời.</figcaption>
+    </figure>
+
+    <div class="notes">
+        <div class="note" data-reveal>
+            <span class="note-k">Time</span>
+            <p>Thời gian dần trôi. Mỗi người chọn cho mình một hướng đi. Có những thay đổi, có những khó khăn, và mỗi lần chờ đợi lại dài hơn ta nghĩ.</p>
+        </div>
+        <div class="note" data-reveal>
+            <span class="note-k">Change</span>
+            <p>Những cái tên từng dành cả tuổi trẻ để theo đuổi ngày ấy chỉ còn là một phần nhỏ của cuộc sống, khi tất cả cùng lớn thêm một chút. Có thể con đường không còn như xưa. Có thể năm tháng đã bào mòn ta theo những cách ta chưa từng nghĩ tới.</p>
+        </div>
+        <div class="note" data-reveal>
+            <span class="note-k">Hope</span>
+            <p>Nhưng có lẽ trưởng thành là hiểu rằng, có những điều không cần giữ nguyên vẹn để vẫn còn ý nghĩa.</p>
+        </div>
+    </div>
+
+    <p class="closing" data-reveal>Chúng mình vẫn ở đây.<br>Các anh vẫn đang bước tiếp.<br>Và biết đâu, vẫn còn vài ký ức nữa<br>đang chờ ta phía trước.</p>
+</section>
+
+
+<!-- ============ 6. LÁ THƯ (phong bì mở ra khi chạm) ============ -->
+<section class="sec" id="thu">
+    <div class="mail" id="mail" data-reveal>
+
+        <div class="env-wrap">
+            <div>
+                <button class="box" id="box" type="button" aria-label="Chạm để mở hộp bí mật">
+                    <span class="box-light"></span>
+                    <span class="box-lid"><i>✦</i></span>
+                    <span class="box-body"><b></b></span>
+                </button>
+                <p class="tap">Một chiếc hộp nhỏ giữ lại điều em muốn nói.<br>Chạm để mở.</p>
+            </div>
+        </div>
+
+        <div class="letter-wrap">
+            <div class="letter-clip">
+                <!-- ✎ Viết lời của riêng bạn trong khung này (mỗi thẻ <p> hiện ra lần lượt) -->
+                <div class="letter">
+                    <span class="stamp">✦</span>
+                    <p class="date">Một đêm cuối năm, 2026</p>
+                    <p class="to">Gửi EXO,</p>
+                    <p>Cảm ơn các anh đã là một phần tuổi trẻ của em.<br>
+                    Cảm ơn những bài hát, những sân khấu, những khoảnh khắc đã lặng lẽ trở thành một phần câu chuyện của em.</p>
+                    <p>Mình đã đi được một chặng đường dài.<br>
+                    Dù thời gian có trôi bao lâu, em nghĩ một phần trong em sẽ luôn nhớ đứa trẻ ngày ấy, vô tình tìm thấy các anh trên màn hình TV.</p>
+                    <p>Nếu những năm tháng ấy là một chương của tuổi trẻ,<br>
+                    thì em biết ơn vì EXO đã được viết ở đâu đó trong đó.</p>
+                    <p>Hy vọng trong tương lai em sẽ gặp được điều em muốn, mà anh vẫn còn giữ được ước nguyện thuở ấy.</p>
+                    <p class="sign">— Wendy</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ============ 8. LỜI KẾT (tiếng Anh) ============ -->
+<section class="final">
+    <div class="final-ring" data-reveal><img src="images/exo-logo.png" alt="EXO"></div>
+    <h2 class="final-title" data-reveal>We grew up.<br>We changed.<br><em>We remember.</em></h2>
+    <p class="final-sub" data-reveal>And maybe, there are still a few memories left to make.</p>
+    <p class="final-foot" data-reveal>EXO × EXO-L · 2026</p>
+</section>
+
+</main>
+
+<audio id="audio" loop preload="auto"></audio>
+<div class="sp-bar" id="spBar" hidden></div>
+
+<div class="lightbox" id="lightbox"><img alt=""></div>
+
+<script src="script.js"></script>
+</body>
+</html>
